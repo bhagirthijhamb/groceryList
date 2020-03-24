@@ -34,4 +34,26 @@ $(document).ready(function(){
         $('input:text').val(''); // Empty the text input
         updateCount(); // Update the count
     });
-})
+
+    // CLICK HANDLING - USES DELEGATION ON <UL> ELEMENT
+    $list.on('click', 'li', function() {
+        const $this = $(this);
+        const complete = $this.hasClass('complete');  //Is item complete
+
+        if(complete === true) {         // Check if the item is complete
+            $this.animate({             // If so, animate opacity + padding
+                opacity: 0.0, 
+                paddingLeft: '+=180'
+            }, 500, 'swing', function() { // Use callback when animation completes
+                $this.remove();         // Then completely remove this item 
+            });             
+        } else {                        // Otherwise indicate it ia complete
+            item = $this.text()          // Get the text from the list item
+            $this.remove();             // remove the list item
+            $list                       // Add back to end of list as complete
+                .append('<li class=\"complete\">' + item + '</li>')
+                .hide().fadeIn(300);    // Hide it so it can be faded in
+            updateCount();              // Update the counter
+        }                               // End of else option
+    })                                  // End of event handler
+});
