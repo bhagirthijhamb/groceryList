@@ -102,6 +102,17 @@ p {
 .complete a {display:block;}
 
 
+.favorite {
+  background-image: url('./images/icon-heart.png');
+  background-position: right, center;
+  background-repeat: no-repeat;}
+
+
+#group {
+  margin: 10px;
+  border: 2px solid #999;}
+
+
 /* FORM STYLES */
 
 #newItemButton {padding: 10px 20px 75px 20px; display: none;}
@@ -120,6 +131,30 @@ p {
   background-color: #000;
   color: #fff;
   cursor: pointer;} */
+
+#slideAd {
+  width: 330px;
+  height: 60px;
+  background-color: #403c3b;
+  background-image: url('../images/adverlion.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #fff;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 25px 20px 10px 85px;
+  position: fixed;
+  bottom: 20px;
+  right: -235px;
+  text-transform: uppercase;}
+
+
+
+#footer {
+  background:none;
+  color: #000;}
+
 
 
 /* Small screen:mobile */
